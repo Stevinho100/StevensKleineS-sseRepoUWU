@@ -1,9 +1,7 @@
-using System;
+var builder = WebApplication.CreateBuilder(args);
+ var app = builder.Build();
 
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine(DateTime.Now.ToString("dd.MM.yyyy"));
-    }
-}
+// Liefert das Datum beim Aufruf der Startseite (/)
+ app.MapGet("/", () => DateTime.Now.ToString("dd.MM.yyyy"));
+
+app.Run();
